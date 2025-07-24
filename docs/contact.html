@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/estilosContactame.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+     <!-- Botón de regreso arreglado -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Inicio
+    </a>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h1>Contáctame</h1>
+            </div>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nombre completo</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Correo electrónico</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" name="phone">
+                        <label for="phone">Teléfono (opcional)</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+    <div class="textarea-wrapper input-wrapper">
+        <i class="fas fa-envelope"></i> <!-- Icono de correo para otros campos -->
+        <textarea id="message" required></textarea>
+        <label for="message">Mensaje</label>
+        <span class="focus-border"></span>
+    </div>
+</div>
+
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Enviar mensaje</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animaciones y efectos interactivos
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const inputs = document.querySelectorAll('input, select, textarea');
+            
+            // Efecto de focus en inputs
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+                
+                // Verificar si ya tiene contenido al cargar
+                if (input.value !== '') {
+                    input.parentElement.classList.add('focused');
+                }
+            });
+            
+            // Envío del formulario
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.querySelector('.submit-btn');
+                const btnText = document.querySelector('.btn-text');
+                
+                // Animación de carga
+                submitBtn.classList.add('loading');
+                btnText.textContent = 'Enviando...';
+                
+                // Simular envío
+                setTimeout(() => {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.classList.add('success');
+                    btnText.textContent = '¡Enviado!';
+                    
+                    setTimeout(() => {
+                        submitBtn.classList.remove('success');
+                        btnText.textContent = 'Enviar mensaje';
+                        form.reset();
+                        
+                        // Remover clase focused de todos los inputs
+                        inputs.forEach(input => {
+                            input.parentElement.classList.remove('focused');
+                        });
+                    }, 2000);
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
