@@ -1,0 +1,580 @@
+/* EstilosAbout.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #CAD0FF;
+    background: radial-gradient(circle, rgba(202, 208, 255, 1) 0%, rgba(227, 227, 227, 1) 100%);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 40px 40px 20px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Foto de perfil */
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: block;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: fadeInScale 1s ease-out 0.3s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efecto de brillo en la foto */
+.profile-photo::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.profile-photo:hover::after {
+    opacity: 1;
+    animation: photoShine 0.6s ease-out;
+}
+
+@keyframes photoShine {
+    0% { transform: rotate(45deg) translate(-100%, -100%); }
+    100% { transform: rotate(45deg) translate(100%, 100%); }
+}
+
+header h1 {
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+    font-weight: 700;
+}
+
+/* Secciones */
+section {
+    padding: 30px 40px;
+    animation: fadeInUp 0.6s ease-out both;
+    position: relative;
+}
+
+section:nth-of-type(1) { animation-delay: 0.7s; }
+section:nth-of-type(2) { animation-delay: 0.9s; }
+section:nth-of-type(3) { animation-delay: 1.1s; }
+
+section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: height 0.6s ease;
+}
+
+section:hover::before {
+    height: 100%;
+}
+
+/* Títulos de sección */
+section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: width 0.6s ease;
+    border-radius: 2px;
+}
+
+section:hover h2::after {
+    width: 100%;
+}
+
+/* Párrafos */
+section p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+    transition: all 0.3s ease;
+}
+
+section:hover p {
+    color: #333;
+    transform: translateX(10px);
+}
+
+/* Skills destacados */
+.skill {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    padding: 3px 8px;
+    border-radius: 15px;
+    font-weight: 600;
+    color: #667eea;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 2px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.skill:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Sección intro específica */
+.intro {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    border-radius: 15px;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1), transparent);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+/* Sección formación */
+.formacion {
+    border-left: 4px solid transparent;
+    border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
+    transition: all 0.3s ease;
+}
+
+.formacion:hover {
+    background: rgba(102, 126, 234, 0.02);
+    border-radius: 0 15px 15px 0;
+}
+
+/* Sección intereses */
+.intereses {
+    background: linear-gradient(135deg, rgba(118, 75, 162, 0.05), rgba(102, 126, 234, 0.05));
+    border-radius: 15px;
+    margin: 20px;
+    position: relative;
+}
+
+.intereses::before {
+    content: '🎮';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    padding: 25px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(102, 126, 234, 0.2);
+    animation: fadeInUp 0.6s ease-out 1.3s both;
+}
+
+footer p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+footer:hover p {
+    color: #667eea;
+}
+
+/* Animaciones generales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efectos de hover para el contenedor principal */
+.main-container:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    header, section, footer {
+        padding: 25px 20px;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    section p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .intro, .intereses {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .main-container {
+        margin: 5px;
+    }
+    
+    header, section, footer {
+        padding: 20px 15px;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+    }
+    
+    section p {
+        font-size: 0.95rem;
+    }
+    
+    .intro, .intereses {
+        margin: 10px;
+    }
+}
+
+/* Efectos adicionales de partículas flotantes */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+    animation: particleFloat 10s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes particleFloat {
+    0%, 100% { 
+        background-position: 0% 0%, 100% 100%, 50% 50%; 
+    }
+    50% { 
+        background-position: 100% 100%, 0% 0%, 60% 40%; 
+    }
+}
+/* ===== ESTILOS PARA BOTÓN DE REGRESO ===== */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #667eea;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.back-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover i {
+    transform: translateX(-3px);
+}
+
+/* ===== ESTILOS PARA SECCIÓN DE VIDEO ===== */
+.video-section {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-section h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-description {
+    margin-bottom: 2.5rem;
+    color: #34495e;
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Contenedor responsivo para YouTube */
+.youtube-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .back-btn {
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    
+    .video-section {
+        margin-top: 2rem;
+        padding: 2rem 1rem;
+        border-radius: 15px;
+    }
+    
+    .video-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .video-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .youtube-container {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    .youtube-container iframe {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-btn {
+        gap: 5px;
+        padding: 8px 12px;
+    }
+    
+    .back-btn span {
+        display: none; /* Ocultar texto "Inicio" en móviles muy pequeños */
+    }
+    
+    .video-section {
+        margin-top: 1.5rem;
+        padding: 1.5rem 0.8rem;
+    }
+    
+    .video-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.youtube-container {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}

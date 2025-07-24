@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+       /* background-image: url('../Imagenes/fondo.png');*/
+        background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-attachment: fixed; /* Hace que la imagen de fondo permanezca fija al hacer scroll */
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #CAD0FF;
+        background: radial-gradient(circle, rgba(202, 208, 255, 1) 0%, rgba(227, 227, 227, 1) 100%);
+    }
+
+img {
+    height: 50px;
+    width: 50px;
+
+}
+
+.yo {
+    height: 300px;
+    width: 300px;
+}
+.navbar {
+    display: flex; /* Activa flexbox */
+    justify-content: flex-end; /* Alinea el menú a la derecha */
+    align-items: center; /* Centra verticalmente */
+    padding: 15px 30px; 
+   
+}
+.navbar ul {
+    list-style: none; /* Quita los estilos de lista */
+    display: flex; /* Alinear los elementos en línea */
+ 
+}
+/* Elementos de la lista */
+.navbar ul li {
+    margin: 0 30px; /* Espaciado entre elementos */
+    font-family: Arial, sans-serif; /* Fuente */
+    cursor: pointer; /* Puntero al elemento */
+}
+
+/* Enlaces de la barra de navegación */
+.navbar ul li a {
+    text-decoration: none; /* Quita el subrayado */
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    transition: color 0.3s ease; /* Animación de color */
+}
+/* Efecto hover en enlaces */
+.navbar ul li a:hover {
+    color: #fa0000; /* Cambia a color cian cuando pasas el cursor */
+}
+
+.iconos{
+    display: flex; /* Activa flexbox */ 
+    align-content: center;
+    
+}
+.contenido{
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Alinea el contenido a la mitad */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column; /* Alinear los elementos en columna */
+    width: 100%; /* Ancho del contenido */
+    height: 600px; /* Alto del contenido */
+    padding: 30px; /* Espacio entre los elementos */
+    color: rgb(0, 0, 0);
+}
