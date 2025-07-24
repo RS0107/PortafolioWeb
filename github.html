@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/EstilosGitHub.css">
+    <title>GitHub</title>
+</head>
+<body>
+ <!-- Botón de regreso -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Inicio
+    </a>
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="github-icon"></div>
+            <h1>Mis Proyectos</h1>
+            <p>Explora mi trabajo y contribuciones en GitHub</p>
+            <a href="https://github.com/JhoelN" class="github-link" target="_blank">
+                <span>🔗</span>
+                Visitar mi GitHub
+            </a>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Repositorios</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">70+</div>
+                <div class="stat-label">Commits</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Lenguajes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Años</div>
+            </div>
+        </div>
+
+        <!-- Proyectos Destacados -->
+        <div class="projects-section">
+            <div class="section-title">
+                <h2>Proyectos Destacados</h2>
+                <p>Una selección de mis mejores trabajos y contribuciones</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">ByteForge - Terapias Cognitivas</h3>
+                        <span class="project-language">Multi-tech</span>
+                    </div>
+                    <p class="project-description">
+                        Juego BytePrensión (Versión 2 - Final): Sistema diseñado para terapias cognitivas en pacientes con Alzheimer, integrando un juego interactivo con seguimiento personalizado.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Terapia Cognitiva</span>
+                        <span class="tech-tag">Alzheimer</span>
+                        <span class="tech-tag">Game Design</span>
+                        <span class="tech-tag">Healthcare</span>
+                    </div>
+                    <div class="project-stats">
+                      
+                       
+                        <div class="project-stat">📅 2024</div>
+                        <div class="project-stat">👥 2 contributors</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/FrancisVelastegui2003/Proyecto_ByteForge" class="project-link" target="_blank">Ver Código</a>
+                        <a href="#" class="project-link secondary" target="_blank">Demo</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Chauchería Web</h3>
+                        <span class="project-language">Java</span>
+                    </div>
+                    <p class="project-description">
+                        Aplicación web completa para gestión de chauchería que permite registro de ingresos, egresos y transferencias. Proyecto colaborativo con 6 contribuidores.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">JSP</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-stats">
+                        
+                        
+                        <div class="project-stat">📅 2024</div>
+                        <div class="project-stat">👥 6 contributors</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Fechise/AW_ChaucheritaWeb_GR01" class="project-link" target="_blank">Ver Código</a>
+                        <a href="#" class="project-link secondary" target="_blank">Demo</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Ecuador Interactivo</h3>
+                        <span class="project-language">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        Juego interactivo para aprender sobre las provincias del Ecuador con Text-to-Speech. Incluye características como juego de preguntas, diseño moderno y configuración avanzada.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Text-to-Speech</span>
+                        <span class="tech-tag">Educational</span>
+                    </div>
+                    <div class="project-stats">
+                        
+                        
+                        <div class="project-stat">📅 2025</div>
+                        <div class="project-stat">👥 5 contributors</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Eliathx/ecuador-interactivo" class="project-link" target="_blank">Ver Código</a>
+                        <a href="#" class="project-link secondary" target="_blank">Jugar</a>
+                    </div>
+                </div>
+
+    <script>
+        // Animación de números en las estadísticas
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const finalNumber = parseInt(stat.textContent);
+                const suffix = stat.textContent.replace(/\d/g, '');
+                let currentNumber = 0;
+                const increment = finalNumber / 50;
+                
+                const timer = setInterval(() => {
+                    currentNumber += increment;
+                    if (currentNumber >= finalNumber) {
+                        stat.textContent = finalNumber + suffix;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(currentNumber) + suffix;
+                    }
+                }, 50);
+            });
+        }
+
+        // Ejecutar animación cuando la página carga
+        window.addEventListener('load', () => {
+            setTimeout(animateNumbers, 1000);
+        });
+
+        // Efectos de hover en las tarjetas de proyecto
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Actualizar enlaces con tu información real
+        function updateGitHubLinks() {
+            // Tu usuario real de GitHub
+            const githubUsername = 'JhoelN';
+            
+            // Los enlaces ya están actualizados con tus repositorios reales
+            console.log(`GitHub usuario: ${githubUsername}`);
+        }
+
+        // Llamar la función cuando cargue la página
+        window.addEventListener('load', updateGitHubLinks);
+    </script>
+</body>
+</html>
